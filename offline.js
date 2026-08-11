@@ -89,10 +89,11 @@ async function saveForOffline() {
     localStorage.setItem(STORAGE_KEY, "true");
     setButtonsState("saved");
     showToast("✓ The soundtrack is yours");
-  } catch (err) {
-    setButtonsState("idle");
-    showToast("Couldn't save it just now — try again in a moment.");
-  }
+  } } catch (err) {
+  console.error("Save for offline failed:", err);
+  setButtonsState("idle");
+  showToast("Couldn't save it just now — try again in a moment.");
+}
 }
 
   function initOfflineIndicator() {
