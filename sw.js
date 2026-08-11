@@ -1,6 +1,4 @@
-/* ============================================================
-   SERVICE WORKER — app shell precache + on-demand audio caching
-   ============================================================ */
+
 
 const SHELL_CACHE = "btp-shell-v1";
 const AUDIO_CACHE = "btp-audio-v1";
@@ -9,13 +7,13 @@ const SHELL_ASSETS = [
   "./",
   "index.html",
   "manifest.json",
-  "css/style.css",
-  "js/playlist.js",
-  "js/player.js",
-  "js/offline.js",
-  "js/app.js",
-  "icons/icon-192.png",
-  "icons/icon-512.png",
+  "style.css",
+  "playlist.js",
+  "player.js",
+  "offline.js",
+  "app.js",
+  "icon-192.png",
+  "icon-512.png",
 ];
 
 self.addEventListener("install", (event) => {
