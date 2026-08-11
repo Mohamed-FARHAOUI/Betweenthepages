@@ -21,19 +21,19 @@ const tracks = [
   {
     title: "Close to You",
     artist: "Zack Webb",
-    file: "audio/Close to You.mp3",
+    file: "Close to You.mp3",
     artwork: "",
     book: "Book I",
-    page: "",
+    page: "287",
     note: "I don't think I need some grand adventure. Sometimes, I'd be happy just being somewhere close to you."
   },
   {
     title: "Aching Bones",
     artist: "Zack Web",
-    file: "audio/Aching Bones.mp3",
+    file: "Aching Bones.mp3",
     artwork: "",
     book: "Book I",
-    page: "",
+    page: "63",
     note: "You probably don't know how much of you I've carried with me— in little memories, in quiet moments, in all the things I notice without meaning to."
   },
 
