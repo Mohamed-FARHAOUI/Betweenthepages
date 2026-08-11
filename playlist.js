@@ -1,0 +1,234 @@
+/* ============================================================
+   PLAYLIST DATA + RENDERING
+   Edit the `tracks` array below to build your own soundtrack.
+   Each entry:
+     title    - song title
+     artist   - artist name
+     file     - path to the mp3 in /audio
+     artwork  - path to a cover image in /images/artwork (optional)
+     book     - which book this belongs to, e.g. "Book I" (optional)
+     page     - page number as a string, e.g. "87" (optional)
+     note     - a short personal line for the note panel (optional)
+   Leave book/page/note empty ("") for tracks with no attached memory —
+   don't invent them just to fill the field.
+   ============================================================ */
+
+const tracks = [
+  {
+    title: "Fade Into You",
+    artist: "Mazzy Star",
+    file: "audio/Fade Into You.mp3",
+    artwork: "",
+    book: "Book I",
+    page: "",
+    note: "If I could choose one place to disappear for a while,it would be somewhere between your eyes and your smile."
+  },
+  {
+    title: "You Don't Know",
+    artist: "",
+    file: "audio/You Don't Know (slowed  reverb).mp3",
+    artwork: "",
+    book: "Book I",
+    page: "",
+    note: "You don't know that I notice the little things you never think about. The way you lean when you laugh. The look you give before you smile. Those few seconds when I can already tell what's coming. You probably don't realize how much of you I remember."
+  },
+
+  {
+    title: "Born To Die",
+    artist: "Lana Del Rey",
+    file: "audio/Lana Del Rey - Born To Die.mp3",
+    artwork: "",
+    book: "Book I",
+    page: "87",
+    note: "Maybe we're all just passing through this life,but some people make you wish you could stay a little longer."
+  },
+  {
+    title: "Knockin' on Heaven's Door",
+    artist: "Bob Dylan",
+    file: "audio/Knockin' On Heaven's Door.mp3",
+    artwork: "",
+    book: "Book I",
+    page: "134",
+    note: ""
+  },
+  {
+    title: "A Different Age",
+    artist: "Current Joys",
+    file: "audio/Current Joys - A Different Age.mp3",
+    artwork: "",
+    book: "Book I",
+    page: "",
+    note: "I wonder if, somewhere in another version of our lives, we're still living in the moments we thought would last forever."
+  },
+  {
+    title: "Clementine",
+    artist: "Sarah Jaffe",
+    file: "audio/Clementine.mp3",
+    artwork: "",
+    book: "Book II",
+    page: "201",
+    note: "I don't know what the future keeps for us, but I'm glad you were part of this chapter."
+  },
+  {
+    title: "M83 - Wait (Official Video)",
+    artist: "M83",
+    file: "audio/M83 - Wait (Official Video).mp3",
+    artwork: "",
+    book: "Book I",
+    page: "",
+    note: "Some moments don't ask us to stay. They simply ask us to remember them when everything else has changed."
+  },
+  {
+    title: "Miguel - Sure Thing (Lyrics)",
+    artist: "Miguel",
+    file: "audio/Miguel - Sure Thing (Lyrics).mp3",
+    artwork: "",
+    book: "Book I",
+    page: "",
+    note: "Some things in life are uncertain. But somehow, you've always felt like one of the sure things."
+  },
+  {
+    title: "Moby - 'The Last Day' ft. Skylar Grey (Official Video)",
+    artist: "Moby",
+    file: "audio/Moby - 'The Last Day' ft. Skylar Grey (Official Video).mp3",
+    artwork: "",
+    book: "Book I",
+    page: "",
+    note: "If this were the last day of this chapter, I'd still be grateful that you were in it."
+  },
+  {
+    title: "Still Corners - The Trip [LYRIC VIDEO SpanishEnglish] Subtitulado Español",
+    artist: "Still Corners",
+    file: "audio/Still Corners - The Trip [LYRIC VIDEO SpanishEnglish] Subtitulado Español.mp3",
+    artwork: "",
+    book: "Book I",
+    page: "",
+    note: "If I could get lost anywhere, I'd choose somewhere we'd never been before— just to see where we'd end up."
+  },
+  {
+    title: "The VANNS - Accomplice (Official Video)",
+    artist: "The VANNS",
+    file: "audio/The VANNS - Accomplice (Official Video).mp3",
+    artwork: "",
+    book: "Book I",
+    page: "",
+    note: "I'd choose you as my accomplice in all the little adventures— the ones we plan, and especially the ones we don't."
+  },
+  {
+    title: "Lana Del Rey - Salvatore (Lyrics)",
+    artist: "Lana Del Rey",
+    file: "audio/Lana Del Rey - Salvatore (Lyrics).mp3",
+    artwork: "",
+    book: "Book I",
+    page: "",
+    note: "If I could keep one version of you forever, I'd choose the one standing there in the golden light, before the evening disappeared."
+  },
+  {
+    title: "radiohead - let down (best part looped reupload)",
+    artist: "radiohead",
+    file: "audio/radiohead - let down (best part looped reupload).mp3",
+    artwork: "",
+    book: "Book I",
+    page: "",
+    note: "Maybe we're all just trying to find one place where we don't feel alone."
+  },
+  
+  
+];
+
+/**
+ * Formats seconds as m:ss. Returns "0:00" for invalid input.
+ */
+function formatTime(seconds) {
+  if (!isFinite(seconds) || seconds < 0) return "0:00";
+  const m = Math.floor(seconds / 60);
+  const s = Math.floor(seconds % 60);
+  return `${m}:${s.toString().padStart(2, "0")}`;
+}
+
+/**
+ * Builds a fallback gradient background for tracks with no artwork,
+ * so every track still reads as visually distinct.
+ */
+function artworkStyle(track, index) {
+  if (track.artwork) return `background-image:url('${track.artwork}');background-size:cover;background-position:center;`;
+  const hue = (index * 47) % 360;
+  return `background:linear-gradient(135deg, hsl(${hue} 28% 20%), var(--ink-2));`;
+}
+
+/**
+ * Renders the full playlist into the #playlist element and wires
+ * up click/keyboard handling via the provided callbacks.
+ */
+function renderPlaylist({ onSelect, onNoteOpen }) {
+  const list = document.getElementById("playlist");
+  const countEl = document.getElementById("trackCount");
+  list.innerHTML = "";
+
+  tracks.forEach((track, index) => {
+    const li = document.createElement("li");
+    li.className = "track";
+    li.setAttribute("tabindex", "0");
+    li.setAttribute("role", "button");
+    li.setAttribute("aria-label", `Play ${track.title} by ${track.artist}`);
+    li.dataset.index = index;
+
+    const bookLine = track.book && track.page ? `${track.book} · p. ${track.page}` : (track.book || "");
+
+    li.innerHTML = `
+      <span class="track__index">
+        <span class="track__num">${String(index + 1).padStart(2, "0")}</span>
+        <span class="track__eq"><span></span><span></span><span></span></span>
+      </span>
+      <div class="track__body">
+        <p class="track__title">${track.title}</p>
+        <p class="track__artist">${track.artist}</p>
+        ${bookLine ? `<p class="track__page-note">${bookLine}</p>` : ""}
+      </div>
+      <span class="track__col-book">${bookLine}</span>
+      <span class="track__col-time">—</span>
+      <button class="track__note-btn" aria-label="Story behind this song" ${track.note || bookLine ? "" : "hidden"}>⋯</button>
+    `;
+
+    li.style.setProperty("--art", "1");
+    li.addEventListener("click", (e) => {
+      if (e.target.closest(".track__note-btn")) {
+        onNoteOpen(index);
+        return;
+      }
+      onSelect(index);
+    });
+    li.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        onSelect(index);
+      }
+    });
+
+    list.appendChild(li);
+  });
+
+  countEl.textContent = `${tracks.length} song${tracks.length === 1 ? "" : "s"}`;
+}
+
+/**
+ * Updates active/playing visual state on the rendered rows.
+ */
+function markActiveTrack(index, isPlaying) {
+  document.querySelectorAll(".track").forEach((el) => {
+    const active = Number(el.dataset.index) === index;
+    el.classList.toggle("is-active", active);
+    el.classList.toggle("is-playing", active && isPlaying);
+  });
+}
+
+/**
+ * Fills in each row's duration once metadata is known, so the
+ * time column isn't stuck on an em-dash after first load.
+ */
+function setTrackDuration(index, seconds) {
+  const row = document.querySelector(`.track[data-index="${index}"]`);
+  if (!row) return;
+  const timeEl = row.querySelector(".track__col-time");
+  if (timeEl) timeEl.textContent = formatTime(seconds);
+}
