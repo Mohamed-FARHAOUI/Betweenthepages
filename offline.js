@@ -68,24 +68,30 @@ const Offline = (() => {
   }
 
   async function saveForOffline() {
-    if (localStorage.getItem(STORAGE_KEY) === "true") {
-      showToast("Already saved — it's yours.");
-      return;
-    }
-    setButtonsState("saving");
-    try {
-      await registerServiceWorker();
-      // Give a freshly-registered worker a moment to take control.
-      await new Promise((r) => setTimeout(r, 400));
-      await sendCacheRequest();
-      localStorage.setItem(STORAGE_KEY, "true");
-      setButtonsState("saved");
-      showToast("✓ The soundtrack is yours");
-    } catch (err) {
-      setButtonsState("idle");
-      showToast("Couldn't save it just now — try again in a moment.");
-    }
+  if (localStorage.getItem(STORAGE_KEY) === "true") {
+    showToast("Already saved — it's yours.");
+    return;
   }
+  setButtonsState("saving");
+  try {
+    await registerServiceWorker();
+
+    // Wait for the worker to actually take control, instead of guessing a delay.
+    if (!navigator.serviceWorker.controller) {
+      await new Promise((resolve) => {
+        navigator.serviceWorker.addEventListener("controllerchange", resolve, { once: true });
+      });
+    }
+
+    await sendCacheRequest();
+    localStorage.setItem(STORAGE_KEY, "true");
+    setButtonsState("saved");
+    showToast("✓ The soundtrack is yours");
+  } catch (err) {
+    setButtonsState("idle");
+    showToast("Couldn't save it just now — try again in a moment.");
+  }
+}
 
   function initOfflineIndicator() {
     const indicator = document.getElementById("offlineIndicator");
