@@ -2,10 +2,8 @@
    OFFLINE — service worker registration + "save for offline" flow
    Keeps technical language ("cache", "service worker") out of the UI.
    ============================================================ */
-
 const Offline = (() => {
   const STORAGE_KEY = "btp_saved_offline";
-
   function showToast(message, duration = 2600) {
     const toast = document.getElementById("toast");
     toast.textContent = message;
@@ -13,18 +11,15 @@ const Offline = (() => {
     clearTimeout(showToast._t);
     showToast._t = setTimeout(() => { toast.hidden = true; }, duration);
   }
-
   function setButtonsState(state) {
     // state: "idle" | "saving" | "saved"
     const desktopBtn = document.getElementById("offlineBtnDesktop");
     const mobileBtn = document.getElementById("offlineBtnMobile");
     const label = desktopBtn.querySelector(".offline-btn__label");
-
     [desktopBtn, mobileBtn].forEach((btn) => {
       btn.classList.toggle("is-saving", state === "saving");
       btn.classList.toggle("is-saved", state === "saved");
     });
-
     if (state === "idle") {
       label.textContent = "Save for Offline";
       mobileBtn.setAttribute("aria-label", "Save for offline listening");
@@ -36,7 +31,6 @@ const Offline = (() => {
       mobileBtn.setAttribute("aria-label", "Soundtrack saved for offline listening");
     }
   }
-
   async function registerServiceWorker() {
     if (!("serviceWorker" in navigator)) return null;
     try {
@@ -47,7 +41,6 @@ const Offline = (() => {
       return null;
     }
   }
-
   function sendCacheRequest() {
     return new Promise((resolve, reject) => {
       if (!navigator.serviceWorker.controller) {
@@ -66,36 +59,32 @@ const Offline = (() => {
       );
     });
   }
-
-async function saveForOffline() {
-  if (localStorage.getItem(STORAGE_KEY) === "true") {
-    showToast("Already saved — it's yours.");
-    return;
-  }
-  setButtonsState("saving");
-  try {
-    await registerServiceWorker();
-
-    if (!navigator.serviceWorker.controller) {
-      await Promise.race([
-        new Promise((resolve) => {
-          navigator.serviceWorker.addEventListener("controllerchange", resolve, { once: true });
-        }),
-        new Promise((_, reject) => setTimeout(() => reject(new Error("controller-timeout")), 5000)),
-      ]);
+  async function saveForOffline() {
+    if (localStorage.getItem(STORAGE_KEY) === "true") {
+      showToast("Already saved — it's yours.");
+      return;
     }
-
-    await sendCacheRequest();
-    localStorage.setItem(STORAGE_KEY, "true");
-    setButtonsState("saved");
-    showToast("✓ The soundtrack is yours");
-  } } catch (err) {
-  console.error("Save for offline failed:", err);
-  setButtonsState("idle");
-  showToast("Couldn't save it just now — try again in a moment.");
-}
-}
-
+    setButtonsState("saving");
+    try {
+      await registerServiceWorker();
+      if (!navigator.serviceWorker.controller) {
+        await Promise.race([
+          new Promise((resolve) => {
+            navigator.serviceWorker.addEventListener("controllerchange", resolve, { once: true });
+          }),
+          new Promise((_, reject) => setTimeout(() => reject(new Error("controller-timeout")), 5000)),
+        ]);
+      }
+      await sendCacheRequest();
+      localStorage.setItem(STORAGE_KEY, "true");
+      setButtonsState("saved");
+      showToast("✓ The soundtrack is yours");
+    } catch (err) {
+      console.error("Save for offline failed:", err);
+      setButtonsState("idle");
+      showToast("Couldn't save it just now — try again in a moment.");
+    }
+  }
   function initOfflineIndicator() {
     const indicator = document.getElementById("offlineIndicator");
     function update() {
@@ -105,18 +94,14 @@ async function saveForOffline() {
     window.addEventListener("offline", update);
     update();
   }
-
   function init() {
     initOfflineIndicator();
     registerServiceWorker();
-
     if (localStorage.getItem(STORAGE_KEY) === "true") {
       setButtonsState("saved");
     }
-
     document.getElementById("offlineBtnDesktop").addEventListener("click", saveForOffline);
     document.getElementById("offlineBtnMobile").addEventListener("click", saveForOffline);
   }
-
   return { init };
 })();
