@@ -1,23 +1,9 @@
-/* ============================================================
-   PLAYLIST DATA + RENDERING
-   Edit the `tracks` array below to build your own soundtrack.
-   Each entry:
-     title    - song title
-     artist   - artist name
-     file     - path to the mp3 in /audio
-     artwork  - path to a cover image in /images/artwork (optional)
-     book     - which book this belongs to, e.g. "Book I" (optional)
-     page     - page number as a string, e.g. "87" (optional)
-     note     - a short personal line for the note panel (optional)
-   Leave book/page/note empty ("") for tracks with no attached memory —
-   don't invent them just to fill the field.
-   ============================================================ */
 
 const tracks = [
   {
     title: "Fade Into You",
     artist: "Mazzy Star",
-    file: "audio/Fade Into You.mp3",
+    file: "Fade Into You.mp3",
     artwork: "",
     book: "Book I",
     page: "",
@@ -26,7 +12,7 @@ const tracks = [
   {
     title: "You Don't Know",
     artist: "",
-    file: "audio/You Don't Know (slowed  reverb).mp3",
+    file: "You Don't Know (slowed  reverb).mp3",
     artwork: "",
     book: "Book I",
     page: "",
@@ -36,7 +22,7 @@ const tracks = [
   {
     title: "Born To Die",
     artist: "Lana Del Rey",
-    file: "audio/Lana Del Rey - Born To Die.mp3",
+    file: "Lana Del Rey - Born To Die.mp3",
     artwork: "",
     book: "Book I",
     page: "87",
@@ -45,7 +31,7 @@ const tracks = [
   {
     title: "Knockin' on Heaven's Door",
     artist: "Bob Dylan",
-    file: "audio/Knockin' On Heaven's Door.mp3",
+    file: "Knockin' On Heaven's Door.mp3",
     artwork: "",
     book: "Book I",
     page: "134",
@@ -54,7 +40,7 @@ const tracks = [
   {
     title: "A Different Age",
     artist: "Current Joys",
-    file: "audio/Current Joys - A Different Age.mp3",
+    file: "Current Joys - A Different Age.mp3",
     artwork: "",
     book: "Book I",
     page: "",
@@ -63,7 +49,7 @@ const tracks = [
   {
     title: "Clementine",
     artist: "Sarah Jaffe",
-    file: "audio/Clementine.mp3",
+    file: "Clementine.mp3",
     artwork: "",
     book: "Book II",
     page: "201",
@@ -72,7 +58,7 @@ const tracks = [
   {
     title: "M83 - Wait (Official Video)",
     artist: "M83",
-    file: "audio/M83 - Wait (Official Video).mp3",
+    file: "M83 - Wait (Official Video).mp3",
     artwork: "",
     book: "Book I",
     page: "",
@@ -81,7 +67,7 @@ const tracks = [
   {
     title: "Miguel - Sure Thing (Lyrics)",
     artist: "Miguel",
-    file: "audio/Miguel - Sure Thing (Lyrics).mp3",
+    file: "Miguel - Sure Thing (Lyrics).mp3",
     artwork: "",
     book: "Book I",
     page: "",
@@ -90,7 +76,7 @@ const tracks = [
   {
     title: "Moby - 'The Last Day' ft. Skylar Grey (Official Video)",
     artist: "Moby",
-    file: "audio/Moby - 'The Last Day' ft. Skylar Grey (Official Video).mp3",
+    file: "Moby - 'The Last Day' ft. Skylar Grey (Official Video).mp3",
     artwork: "",
     book: "Book I",
     page: "",
@@ -99,7 +85,7 @@ const tracks = [
   {
     title: "Still Corners - The Trip [LYRIC VIDEO SpanishEnglish] Subtitulado Español",
     artist: "Still Corners",
-    file: "audio/Still Corners - The Trip [LYRIC VIDEO SpanishEnglish] Subtitulado Español.mp3",
+    file: "Still Corners - The Trip [LYRIC VIDEO SpanishEnglish] Subtitulado Español.mp3",
     artwork: "",
     book: "Book I",
     page: "",
@@ -108,7 +94,7 @@ const tracks = [
   {
     title: "The VANNS - Accomplice (Official Video)",
     artist: "The VANNS",
-    file: "audio/The VANNS - Accomplice (Official Video).mp3",
+    file: "The VANNS - Accomplice (Official Video).mp3",
     artwork: "",
     book: "Book I",
     page: "",
@@ -117,7 +103,7 @@ const tracks = [
   {
     title: "Lana Del Rey - Salvatore (Lyrics)",
     artist: "Lana Del Rey",
-    file: "audio/Lana Del Rey - Salvatore (Lyrics).mp3",
+    file: "Lana Del Rey - Salvatore (Lyrics).mp3",
     artwork: "",
     book: "Book I",
     page: "",
@@ -126,7 +112,7 @@ const tracks = [
   {
     title: "radiohead - let down (best part looped reupload)",
     artist: "radiohead",
-    file: "audio/radiohead - let down (best part looped reupload).mp3",
+    file: "radiohead - let down (best part looped reupload).mp3",
     artwork: "",
     book: "Book I",
     page: "",
@@ -136,9 +122,7 @@ const tracks = [
   
 ];
 
-/**
- * Formats seconds as m:ss. Returns "0:00" for invalid input.
- */
+
 function formatTime(seconds) {
   if (!isFinite(seconds) || seconds < 0) return "0:00";
   const m = Math.floor(seconds / 60);
@@ -146,20 +130,14 @@ function formatTime(seconds) {
   return `${m}:${s.toString().padStart(2, "0")}`;
 }
 
-/**
- * Builds a fallback gradient background for tracks with no artwork,
- * so every track still reads as visually distinct.
- */
+
 function artworkStyle(track, index) {
   if (track.artwork) return `background-image:url('${track.artwork}');background-size:cover;background-position:center;`;
   const hue = (index * 47) % 360;
   return `background:linear-gradient(135deg, hsl(${hue} 28% 20%), var(--ink-2));`;
 }
 
-/**
- * Renders the full playlist into the #playlist element and wires
- * up click/keyboard handling via the provided callbacks.
- */
+
 function renderPlaylist({ onSelect, onNoteOpen }) {
   const list = document.getElementById("playlist");
   const countEl = document.getElementById("trackCount");
@@ -211,9 +189,7 @@ function renderPlaylist({ onSelect, onNoteOpen }) {
   countEl.textContent = `${tracks.length} song${tracks.length === 1 ? "" : "s"}`;
 }
 
-/**
- * Updates active/playing visual state on the rendered rows.
- */
+
 function markActiveTrack(index, isPlaying) {
   document.querySelectorAll(".track").forEach((el) => {
     const active = Number(el.dataset.index) === index;
@@ -222,10 +198,7 @@ function markActiveTrack(index, isPlaying) {
   });
 }
 
-/**
- * Fills in each row's duration once metadata is known, so the
- * time column isn't stuck on an em-dash after first load.
- */
+
 function setTrackDuration(index, seconds) {
   const row = document.querySelector(`.track[data-index="${index}"]`);
   if (!row) return;
