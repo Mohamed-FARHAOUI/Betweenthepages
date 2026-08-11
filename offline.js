@@ -67,7 +67,7 @@ const Offline = (() => {
     });
   }
 
-  async function saveForOffline() {
+async function saveForOffline() {
   if (localStorage.getItem(STORAGE_KEY) === "true") {
     showToast("Already saved — it's yours.");
     return;
@@ -76,11 +76,13 @@ const Offline = (() => {
   try {
     await registerServiceWorker();
 
-    // Wait for the worker to actually take control, instead of guessing a delay.
     if (!navigator.serviceWorker.controller) {
-      await new Promise((resolve) => {
-        navigator.serviceWorker.addEventListener("controllerchange", resolve, { once: true });
-      });
+      await Promise.race([
+        new Promise((resolve) => {
+          navigator.serviceWorker.addEventListener("controllerchange", resolve, { once: true });
+        }),
+        new Promise((_, reject) => setTimeout(() => reject(new Error("controller-timeout")), 5000)),
+      ]);
     }
 
     await sendCacheRequest();
