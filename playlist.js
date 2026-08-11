@@ -18,6 +18,24 @@ const tracks = [
     page: "",
     note: "You don't know that I notice the little things you never think about. The way you lean when you laugh. The look you give before you smile. Those few seconds when I can already tell what's coming. You probably don't realize how much of you I remember."
   },
+  {
+    title: "Close to You",
+    artist: "Zack Webb",
+    file: "audio/Close to You.mp3",
+    artwork: "",
+    book: "Book I",
+    page: "",
+    note: "I don't think I need some grand adventure. Sometimes, I'd be happy just being somewhere close to you."
+  },
+  {
+    title: "Aching Bones",
+    artist: "Zack Web",
+    file: "audio/Aching Bones.mp3",
+    artwork: "",
+    book: "Book I",
+    page: "",
+    note: "You probably don't know how much of you I've carried with me— in little memories, in quiet moments, in all the things I notice without meaning to."
+  },
 
   {
     title: "Born To Die",
@@ -83,9 +101,9 @@ const tracks = [
     note: "If this were the last day of this chapter, I'd still be grateful that you were in it."
   },
   {
-    title: "Still Corners - The Trip [LYRIC VIDEO SpanishEnglish] Subtitulado Español",
+    title: "Still Corners - The Trip",
     artist: "Still Corners",
-    file: "Still Corners - The Trip [LYRIC VIDEO SpanishEnglish] Subtitulado Español.mp3",
+    file: "Still Corners - The Trip.mp3",
     artwork: "",
     book: "Book I",
     page: "",
