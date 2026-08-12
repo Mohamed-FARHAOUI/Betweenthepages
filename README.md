@@ -71,7 +71,7 @@ The project is intentionally lightweight and dependency-free.
 ## 1. Clone the repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/between-the-pages.git
+git clone https://github.com/Mohamed-FARHAOUI/Betweenthepages.git
 cd between-the-pages
 ```
 
