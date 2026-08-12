@@ -1,5 +1,14 @@
 
 const tracks = [
+   {
+    title: "The Healing Curve",
+    artist: "Estela Valentine",
+    file: "The Healing Curve.mp3",
+    artwork: "",
+    book: "Book II",
+    page: "",
+    note: "I don't think I need some grand adventure. Sometimes, I'd be happy just being somewhere close to you."
+  },
   {
     title: "Fade Into You",
     artist: "Mazzy Star",
