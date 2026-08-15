@@ -121,16 +121,7 @@ const tracks = [
     lang: "en",
     note: "If this were the last day of this chapter, I'd still be grateful that you were in it."
   },
-  {
-    title: "Still Corners - The Trip",
-    artist: "Still Corners",
-    file: "Still Corners - The Trip.mp3",
-    artwork: "",
-    book: "Book I",
-    page: "",
-    lang: "en",
-    note: "If I could get lost anywhere, I'd choose somewhere we'd never been before— just to see where we'd end up."
-  },
+ 
   {
     title: "The VANNS - Accomplice (Official Video)",
     artist: "The VANNS",
