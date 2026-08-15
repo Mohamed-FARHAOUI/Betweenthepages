@@ -185,7 +185,7 @@ const tracks = [
   {
     title: "Beyoncé - Halo",
     artist: "Beyoncé",
-    file: "Beyoncé - Halo.mp3",
+    file: "Beyoncé - Halo.mp3",
     artwork: "",
     book: "Book I",
     page: "",
