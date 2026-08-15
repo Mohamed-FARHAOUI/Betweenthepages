@@ -151,6 +151,98 @@ const tracks = [
     lang: "en",
     note: "If I could keep one version of you forever, I'd choose the one standing there in the golden light, before the evening disappeared."
   },
+   
+  {
+    title: "Timbaland - Apologize ft. OneRepublic",
+    artist: "Timbaland",
+    file: "Timbaland - Apologize ft. OneRepublic.mp3",
+    artwork: "",
+    book: "Book I",
+    page: "",
+    lang: "en",
+    note: "Not every feeling arrives at the right time. Some simply arrive, and stay."
+  },
+  {
+    title: "Justin Timberlake - Mirrors (Lyrics)",
+    artist: "Justin Timberlake",
+    file: "Justin Timberlake - Mirrors (Lyrics).mp3",
+    artwork: "",
+    book: "Book I",
+    page: "",
+    lang: "en",
+    note: "Sometimes you meet someone and start noticing pieces of yourself in the way they see the world."
+  },
+  {
+    title: "Leona Lewis - Bleeding Love (US Version - Official Video)",
+    artist: "Leona Lewis",
+    file: "Leona Lewis - Bleeding Love (US Version - Official Video).mp3",
+    artwork: "",
+    book: "Book I",
+    page: "",
+    lang: "en",
+    note: "There are feelings you can explain. And then there are the ones that simply refuse to be quiet."
+  },
+  {
+    title: "Beyoncé - Halo",
+    artist: "Beyoncé",
+    file: "Beyoncé - Halo.mp3",
+    artwork: "",
+    book: "Book I",
+    page: "",
+    lang: "en",
+    note: "You probably don't realize how much light you bring into ordinary moments."
+  },
+  {
+    title: "Jordin Sparks, Chris Brown - No Air (Official Video) ft. Chris Brown",
+    artist: "Jordin Sparks, Chris Brown",
+    file: "Jordin Sparks, Chris Brown - No Air (Official Video) ft. Chris Brown.mp3",
+    artwork: "",
+    book: "Book I",
+    page: "",
+    lang: "en",
+    note: "Some people become so important that imagining life without them feels impossible."
+  },
+  {
+    title: "Justin Timberlake - CAN'T STOP THE FEELING! (from DreamWorks Animation's TROLLS) (Official Video)",
+    artist: "Justin Timberlake ",
+    file: "Justin Timberlake - CAN'T STOP THE FEELING! (from DreamWorks Animation's TROLLS) (Official Video).mp3",
+    artwork: "",
+    book: "Book I",
+    page: "",
+    lang: "en",
+    note: "Not every song needs a complicated meaning. Sometimes someone simply makes you happy."
+  },
+  {
+    title: "Mario - Let Me Love You (Lyrics)",
+    artist: "Mario",
+    file: "Mario - Let Me Love You (Lyrics).mp3",
+    artwork: "",
+    book: "Book I",
+    page: "",
+    lang: "en",
+    note: "Sometimes the simplest thing to say is the hardest thing to admit: I just want to love you the way you deserve."
+  }, {
+    title: "CÉLINE - Überall",
+    artist: "CÉLINE",
+    file: "CÉLINE - Überall.mp3",
+    artwork: "",
+    book: "Book I",
+    page: "",
+    lang: "en",
+    note: "Somehow, you end up everywhere. In songs. In places. In little memories I wasn't even trying to keep."
+  },
+  {
+    title: "Amir - J'ai cherché (Clip officiel)",
+    artist: "Amir",
+    file: "Amir - J'ai cherché (Clip officiel).mp3",
+    artwork: "",
+    book: "Book I",
+    page: "",
+    lang: "en",
+    note: "I went looking for something beautiful. Somehow, along the way, I found myself thinking of you."
+  },
+  
+  
   {
     title: "radiohead - let down (best part looped reupload)",
     artist: "radiohead",
@@ -245,23 +337,14 @@ const tracks = [
   {
     title: "مهرة - اسماعيل تمر Ft أوكتاي  Mohra - Ismaeil Tamr Ft Oktay",
     artist: "Ismaeil Tamr Ft Oktay",
-    file: "مهرة - اسماعيل تمر Ft أوكتاي  Mohra - Ismaeil Tamr Ft Oktay.mp3",
+    file: "مهرة - اسماعيل تمر Ft أوكتاي  Mohra - Ismaeil Tamr Ft Oktay.mp3",
     artwork: "",
     book: "Book I",
     page: "",
     lang: "ar",
     note: "You have always had something difficult to explain. Maybe that's why I keep trying."
   },
-  {
-    title: "آه يا حلو - ناي البرغوثي  Ah Ya Helou - Nai Barghouthi",
-    artist: "Nai Barghouthi",
-    file: "آه يا حلو - ناي البرغوثي  Ah Ya Helou - Nai Barghouthi.mp3",
-    artwork: "",
-    book: "Book I",
-    page: "",
-    lang: "ar",
-    note: "For a moment, forget everything else. Just smile. You look beautiful when you do."
-  },
+ 
   {
     title: "Wael Jassar - Btew7ashiny - Clear Version 4K l  وائل جسار - فيديو كليب بتوحشيني (نسخة محسنة)",
     artist: "Wael Jassar ",
@@ -272,97 +355,6 @@ const tracks = [
     lang: "ar",
     note: "Funny how someone can be nowhere near you and somehow still be everywhere."
   },
-  {
-    title: "Timbaland - Apologize ft. OneRepublic",
-    artist: "Timbaland",
-    file: "Timbaland - Apologize ft. OneRepublic.mp3",
-    artwork: "",
-    book: "Book I",
-    page: "",
-    lang: "en",
-    note: "Not every feeling arrives at the right time. Some simply arrive, and stay."
-  },
-  {
-    title: "Justin Timberlake - Mirrors (Lyrics)",
-    artist: "Justin Timberlake",
-    file: "Justin Timberlake - Mirrors (Lyrics).mp3",
-    artwork: "",
-    book: "Book I",
-    page: "",
-    lang: "en",
-    note: "Sometimes you meet someone and start noticing pieces of yourself in the way they see the world."
-  },
-  {
-    title: "Leona Lewis - Bleeding Love (US Version - Official Video)",
-    artist: "Leona Lewis",
-    file: "Leona Lewis - Bleeding Love (US Version - Official Video).mp3",
-    artwork: "",
-    book: "Book I",
-    page: "",
-    lang: "en",
-    note: "There are feelings you can explain. And then there are the ones that simply refuse to be quiet."
-  },
-  {
-    title: "Beyoncé - Halo",
-    artist: "Beyoncé",
-    file: "Beyoncé - Halo.mp3",
-    artwork: "",
-    book: "Book I",
-    page: "",
-    lang: "en",
-    note: "You probably don't realize how much light you bring into ordinary moments."
-  },
-  {
-    title: "Jordin Sparks, Chris Brown - No Air (Official Video) ft. Chris Brown",
-    artist: "Jordin Sparks, Chris Brown",
-    file: "Jordin Sparks, Chris Brown - No Air (Official Video) ft. Chris Brown.mp3",
-    artwork: "",
-    book: "Book I",
-    page: "",
-    lang: "en",
-    note: "Some people become so important that imagining life without them feels impossible."
-  },
-  {
-    title: "Justin Timberlake - CAN'T STOP THE FEELING! (from DreamWorks Animation's TROLLS) (Official Video)",
-    artist: "Justin Timberlake ",
-    file: "Justin Timberlake - CAN'T STOP THE FEELING! (from DreamWorks Animation's TROLLS) (Official Video).mp3",
-    artwork: "",
-    book: "Book I",
-    page: "",
-    lang: "en",
-    note: "Not every song needs a complicated meaning. Sometimes someone simply makes you happy."
-  },
-  {
-    title: "Mario - Let Me Love You (Lyrics)",
-    artist: "Mario",
-    file: "Mario - Let Me Love You (Lyrics).mp3",
-    artwork: "",
-    book: "Book I",
-    page: "",
-    lang: "en",
-    note: "Sometimes the simplest thing to say is the hardest thing to admit: I just want to love you the way you deserve."
-  }, {
-    title: "CÉLINE - Überall",
-    artist: "CÉLINE",
-    file: "CÉLINE - Überall.mp3",
-    artwork: "",
-    book: "Book I",
-    page: "",
-    lang: "en",
-    note: "Somehow, you end up everywhere. In songs. In places. In little memories I wasn't even trying to keep."
-  },
-  {
-    title: "Amir - J'ai cherché (Clip officiel)",
-    artist: "Amir",
-    file: "Amir - J'ai cherché (Clip officiel).mp3",
-    artwork: "",
-    book: "Book I",
-    page: "",
-    lang: "en",
-    note: "I went looking for something beautiful. Somehow, along the way, I found myself thinking of you."
-  },
-  
-  
   
   
 ];
