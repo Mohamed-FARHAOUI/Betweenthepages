@@ -680,3 +680,27 @@ svg[hidden]{
 @media (min-width: 900px){
   .mobile-books{ display:none; } /* sidebar handles this on desktop */
 }
+
+
+.playlist__divider{
+  padding: 22px 10px 10px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  border-top: 1px solid var(--ink-3);
+  margin-top: 8px;
+}
+.playlist__divider:first-child{
+  border-top: none;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.track--rtl .track__title,
+.track--rtl .track__artist{
+  direction: rtl;
+  text-align: right;
+  font-family: "Fraunces", "Segoe UI", Tahoma, sans-serif;
+}
