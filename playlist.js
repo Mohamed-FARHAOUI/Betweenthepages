@@ -7,6 +7,7 @@ const tracks = [
     artwork: "",
     book: "Book II",
     page: "",
+    lang: "en",
     note: "I don't think I need some grand adventure. Sometimes, I'd be happy just being somewhere close to you."
   },
   {
@@ -16,6 +17,7 @@ const tracks = [
     artwork: "",
     book: "Book I",
     page: "",
+    lang: "en",
     note: "If I could choose one place to disappear for a while,it would be somewhere between your eyes and your smile."
   },
   {
@@ -25,6 +27,7 @@ const tracks = [
     artwork: "",
     book: "Book I",
     page: "",
+    lang: "en",
     note: "You don't know that I notice the little things you never think about. The way you lean when you laugh. The look you give before you smile. Those few seconds when I can already tell what's coming. You probably don't realize how much of you I remember."
   },
   {
@@ -34,6 +37,7 @@ const tracks = [
     artwork: "",
     book: "Book I",
     page: "287",
+    lang: "en",
     note: "I don't think I need some grand adventure. Sometimes, I'd be happy just being somewhere close to you."
   },
   {
@@ -43,6 +47,7 @@ const tracks = [
     artwork: "",
     book: "Book I",
     page: "63",
+    lang: "en",
     note: "You probably don't know how much of you I've carried with me— in little memories, in quiet moments, in all the things I notice without meaning to."
   },
 
@@ -53,6 +58,7 @@ const tracks = [
     artwork: "",
     book: "Book I",
     page: "87",
+    lang: "en",
     note: "Maybe we're all just passing through this life,but some people make you wish you could stay a little longer."
   },
   {
@@ -62,6 +68,7 @@ const tracks = [
     artwork: "",
     book: "Book I",
     page: "134",
+    lang: "en",
     note: ""
   },
   {
@@ -71,6 +78,7 @@ const tracks = [
     artwork: "",
     book: "Book I",
     page: "",
+    lang: "en",
     note: "I wonder if, somewhere in another version of our lives, we're still living in the moments we thought would last forever."
   },
   {
@@ -80,6 +88,7 @@ const tracks = [
     artwork: "",
     book: "Book II",
     page: "201",
+    lang: "en",
     note: "I don't know what the future keeps for us, but I'm glad you were part of this chapter."
   },
   {
@@ -89,6 +98,7 @@ const tracks = [
     artwork: "",
     book: "Book I",
     page: "",
+    lang: "en",
     note: "Some moments don't ask us to stay. They simply ask us to remember them when everything else has changed."
   },
   {
@@ -98,6 +108,7 @@ const tracks = [
     artwork: "",
     book: "Book I",
     page: "",
+    lang: "en",
     note: "Some things in life are uncertain. But somehow, you've always felt like one of the sure things."
   },
   {
@@ -107,6 +118,7 @@ const tracks = [
     artwork: "",
     book: "Book I",
     page: "",
+    lang: "en",
     note: "If this were the last day of this chapter, I'd still be grateful that you were in it."
   },
   {
@@ -116,6 +128,7 @@ const tracks = [
     artwork: "",
     book: "Book I",
     page: "",
+    lang: "en",
     note: "If I could get lost anywhere, I'd choose somewhere we'd never been before— just to see where we'd end up."
   },
   {
@@ -125,6 +138,7 @@ const tracks = [
     artwork: "",
     book: "Book I",
     page: "",
+    lang: "en",
     note: "I'd choose you as my accomplice in all the little adventures— the ones we plan, and especially the ones we don't."
   },
   {
@@ -134,6 +148,7 @@ const tracks = [
     artwork: "",
     book: "Book I",
     page: "",
+    lang: "en",
     note: "If I could keep one version of you forever, I'd choose the one standing there in the golden light, before the evening disappeared."
   },
   {
@@ -143,6 +158,7 @@ const tracks = [
     artwork: "",
     book: "Book I",
     page: "",
+    lang: "en",
     note: "Maybe we're all just trying to find one place where we don't feel alone."
   },
   
