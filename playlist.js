@@ -234,7 +234,7 @@ const tracks = [
   {
     title: "Amir - J'ai cherché (Clip officiel)",
     artist: "Amir",
-    file: "Amir - J'ai cherché (Clip officiel).mp3",
+    file: "Amir - J'ai cherché (Clip officiel).mp3",
     artwork: "",
     book: "Book I",
     page: "",
