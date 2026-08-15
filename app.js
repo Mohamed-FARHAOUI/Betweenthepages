@@ -27,6 +27,10 @@ document.addEventListener("DOMContentLoaded", () => {
     onSelect: (index) => Player.selectTrack(index),
     onNoteOpen: (index) => openNotePanel(index),
   });
+   initLangToggle({
+  onSelect: (index) => Player.selectTrack(index),
+  onNoteOpen: (index) => openNotePanel(index),
+});
 
   Player.onChange((index) => markActiveTrack(index, Player.isPlaying));
 
