@@ -257,7 +257,7 @@ const tracks = [
   {
     title: "آه يا حلو - ناي البرغوثي  Ah Ya Helou - Nai Barghouthi",
     artist: "Nai Barghouthi",
-    file: "آه يا حلو - ناي البرغوثي Ah Ya Helou - Nai Barghouthi.mp3",
+    file: "آه يا حلو - ناي البرغوثي  Ah Ya Helou - Nai Barghouthi.mp3",
     artwork: "",
     book: "Book I",
     page: "",
