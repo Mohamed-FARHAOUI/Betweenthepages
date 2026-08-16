@@ -72,4 +72,34 @@ document.addEventListener("DOMContentLoaded", () => {
     // A future enhancement could surface a single small hint here
     // the first time the soundtrack is saved for offline.
   });
+   
+  /* ---- birthday easter egg (Aug 22) ---- */
+(function revealBirthdayIfDue() {
+  const panel = document.getElementById("birthdayPanel");
+  const backdrop = document.getElementById("birthdayPanelBackdrop");
+  const closeBtn = document.getElementById("birthdayPanelClose");
+  if (!panel) return;
+
+  const now = new Date();
+  const isOnOrAfterAug22 =
+    now.getMonth() > 7 || (now.getMonth() === 7 && now.getDate() >= 22);
+  const forceShow = new URLSearchParams(location.search).has("birthday");
+
+  if (!(isOnOrAfterAug22 || forceShow)) return;
+
+  // Show once per session so it doesn't reappear on every click/navigation
+  if (sessionStorage.getItem("btp_birthday_seen") === "true") return;
+
+  panel.hidden = false;
+  sessionStorage.setItem("btp_birthday_seen", "true");
+
+  function close() {
+    panel.hidden = true;
+  }
+  backdrop.addEventListener("click", close);
+  closeBtn.addEventListener("click", close);
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && !panel.hidden) close();
+  });
+})();
 });
