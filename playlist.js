@@ -1,13 +1,12 @@
 
 const tracks = [
-   {
-    title: "The Healing Curve",
-    artist: "Estela Valentine",
-    file: "The Healing Curve.mp3",
+   {{
+    title: "Lucy Blue - I Left My Heart (Official Audio)",
+    artist: "Lucy Blue",
+    file: "Lucy Blue - I Left My Heart (Official Audio).mp3",
     artwork: "",
     book: "Book II",
     page: "",
-    lang: "en",
     note: "I don't think I need some grand adventure. Sometimes, I'd be happy just being somewhere close to you."
   },
   {
