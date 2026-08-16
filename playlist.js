@@ -1,6 +1,6 @@
 
 const tracks = [
-   {{
+   {
     title: "Lucy Blue - I Left My Heart (Official Audio)",
     artist: "Lucy Blue",
     file: "Lucy Blue - I Left My Heart (Official Audio).mp3",
